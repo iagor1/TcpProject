@@ -17,7 +17,7 @@ namespace Server
                 TcpClient client = listener.AcceptTcpClient();
                 Console.WriteLine("Client accepted.");
                 NetworkStream stream = client.GetStream();
-                StreamReader sr = new StreamReader(client.GetStream());
+                StreamReader sr = new StreamReader(client.GetStream()); // ver isso
                 StreamWriter sw = new StreamWriter(client.GetStream());
                 try
                 {
@@ -35,6 +35,7 @@ namespace Server
                     Console.WriteLine("request received: " + request);
                     sw.WriteLine("You rock!");
                     sw.Flush();
+                    // fechar conexoes
                 }
                 catch (Exception e)
                 {

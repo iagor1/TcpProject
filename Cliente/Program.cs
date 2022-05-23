@@ -10,6 +10,14 @@ namespace Cliente
         static void Main(string[] args)
         {
             {
+                string data;
+                FileStream fs = new FileStream(@"C:\Users\iagor.luchesi\Desktop\teste.txt", FileMode.Open, FileAccess.Read);
+                using (StreamReader sr = new(fs))
+                {
+                    data = sr.ReadToEnd();
+                }
+                Console.WriteLine(data);
+                fs.Close();
             connection:
                 try
                 {
