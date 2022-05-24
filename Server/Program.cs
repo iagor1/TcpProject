@@ -33,8 +33,8 @@ namespace Server
                     }
                     string request = Encoding.UTF8.GetString(buffer, 0, recv);
                     Console.WriteLine("request received: " + request);
-                    sw.WriteLine("You rock!");
-                    sw.Flush();
+                    sw.WriteLine("foi!");
+                    //sw.Flush(); eu acho q esse flush é so p enviar info devolta p client
                     // fechar conexoes
                 }
                 catch (Exception e)

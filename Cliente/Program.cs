@@ -10,20 +10,14 @@ namespace Cliente
         static void Main(string[] args)
         {
             {
-                string data;
-                FileStream fs = new FileStream(@"C:\Users\iagor.luchesi\Desktop\teste.txt", FileMode.Open, FileAccess.Read);
-                using (StreamReader sr = new(fs))
-                {
-                    data = sr.ReadToEnd();
-                }
-                Console.WriteLine(data);
-                fs.Close();
+               
             connection:
                 try
                 {
                     TcpClient client = new TcpClient("127.0.0.1", 1302);
+                    //reading log
+                    string messageToSend = File.ReadAllText(@"C:\Users\iagor.luchesi\Desktop\teste.txt");
                     
-                    string messageToSend = "teste";
                     int byteCount = Encoding.ASCII.GetByteCount(messageToSend + 1);
                     byte[] sendData = Encoding.ASCII.GetBytes(messageToSend);
 
