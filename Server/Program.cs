@@ -21,7 +21,7 @@ namespace Server
                 StreamWriter sw = new StreamWriter(client.GetStream());
                 try
                 {
-                    byte[] buffer = new byte[1024];
+                    byte[] buffer = new byte[1024 * 110000];
                     stream.Read(buffer, 0, buffer.Length);
                     int recv = 0;
                     foreach (byte b in buffer)
@@ -32,16 +32,20 @@ namespace Server
                         }
                     }
                     string request = Encoding.UTF8.GetString(buffer, 0, recv);
-                    Console.WriteLine("request received: " + request);
-                    sw.WriteLine("foi!");
-                    //sw.Flush(); eu acho q esse flush é so p enviar info devolta p client
-                    // fechar conexoes
+                   
+                    
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine("Something went wrong.");
                     sw.WriteLine(e.ToString());
                 }
+                //finally
+                //{
+                //    sw.Close();
+                //} bug
+                Console.WriteLine("\nHit enter to continue...");
+                Console.Read();
             }
         }
     }
