@@ -40,10 +40,9 @@ namespace Server
                     Console.WriteLine("Something went wrong.");
                     sw.WriteLine(e.ToString());
                 }
-                //finally
-                //{
-                //    sw.Close();
-                //} bug
+                //database
+
+
                 Console.WriteLine("\nHit enter to continue...");
                 Console.Read();
             }
