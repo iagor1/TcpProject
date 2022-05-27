@@ -15,7 +15,6 @@ namespace Cliente
                 try
                 {
                     TcpClient client = new TcpClient("127.0.0.1", 1302);
-                    //reading log
                     string messageToSend = File.ReadAllText(@"C:\Users\iagor\Desktop\access_split.log");
                     
                     int byteCount = Encoding.ASCII.GetByteCount(messageToSend + 1);
