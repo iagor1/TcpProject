@@ -24,16 +24,7 @@ namespace Server.Data
         {
             modelBuilder.Entity<Database>().HasKey(p => p.Id);
         }
-        //public class BloggingContextFactory : IDesignTimeDbContextFactory<BloggingContext>
-        //{
-        //    public AcessLogContext CreateDbContext(string[] args)
-        //    {
-        //        var optionsBuilder = new DbContextOptionsBuilder<BloggingContext>();
-        //        optionsBuilder.UseSqlServer("Data Source=blog.db");
-
-        //        return new BloggingContext(optionsBuilder.Options);
-        //    }
-        //}
+       
 
 
     }
